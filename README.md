@@ -3,11 +3,11 @@
 Assumptions
 ===========
 The following type of IPv4 and IPv6 addresses were considered as valid:
-    - Private IP Addresses
-    - Public IP Addresses
-    - Broadcast IP Addresses
-    - Multicast IP Addresses
-    - Anycast IP Addresses
+- Private IP Addresses
+- Public IP Addresses
+- Broadcast IP Addresses
+- Multicast IP Addresses
+- Anycast IP Addresses
 
 Compiling & Executing the program
 =================================
