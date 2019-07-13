@@ -1,4 +1,4 @@
-package model;
+package com.network.model;
 
 import java.text.ParseException;
 

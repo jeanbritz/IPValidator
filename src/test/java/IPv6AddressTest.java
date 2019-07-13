@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.IPv6Address;
+import com.network.model.IPv6Address;
 
 public class IPv6AddressTest {
 

@@ -1,3 +1,5 @@
+package com.network;
+
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,16 +14,17 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
-import model.IPAddress;
-import model.IPv4Address;
-import model.IPv6Address;
+import com.network.model.IPAddress;
+import com.network.model.IPv4Address;
+import com.network.model.IPv6Address;
 
 public class IPValidator {
 
-	ArrayList<IPAddress> ipAddresses;
-	ArrayList<IPv4Address> ipv4Addresses = new ArrayList<>();
-	ArrayList<IPv6Address> ipv6Addresses = new ArrayList<>();
+	private List<IPAddress> ipAddresses;
+	private List<IPv4Address> ipv4Addresses = new ArrayList<>();
+	private List<IPv6Address> ipv6Addresses = new ArrayList<>();
 
 	IPValidator(String filename) {
 		long start = System.currentTimeMillis();
@@ -55,7 +58,7 @@ public class IPValidator {
 		}
 	};
 
-	private void sort(ArrayList<IPAddress> records) {
+	private void sort(List<IPAddress> records) {
 		for (IPAddress ip : records) {
 			if (ip instanceof IPv4Address) {
 				ipv4Addresses.add((IPv4Address) ip);
@@ -123,7 +126,7 @@ public class IPValidator {
 		return content;
 	}
 
-	private void validate(ArrayList<IPAddress> ipAddr) {
+	private void validate(List<IPAddress> ipAddr) {
 		for (IPAddress ip : ipAddr) {
 			if (ip.isValid()) {
 				writeToFile("valid.txt", ip.toString());
@@ -133,7 +136,7 @@ public class IPValidator {
 		}
 	}
 
-	public static void main(String args[]) {
+	public static void main(String ...args) {
 		if (args.length > 0) {
 		new IPValidator(args[0]);
 		} else {
